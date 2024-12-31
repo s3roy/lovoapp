@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support - Lovo</title>
+    <style>
+      /* Basic Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Body Styles */
+      body {
+        background-color: #f9f9f9;
+        font-family: "Arial", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #333;
+      }
+
+      /* Container Styles */
+      .container {
+        width: 420px;
+        background-color: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .container:hover {
+        transform: scale(1.02);
+      }
+
+      /* Heading Styles */
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+        color: #e24452;
+      }
+
+      /* App Icon */
+      .app-icon {
+        display: block;
+        margin: 0 auto 20px;
+        width: 80px;
+        height: 80px;
+        background-image: url("/lovo.jpg"); /* Placeholder icon */
+        background-size: cover;
+        background-position: center;
+        border-radius: 50%;
+      }
+
+      /* Label Styles */
+      label {
+        font-size: 16px;
+        margin-bottom: 8px;
+        display: block;
+        color: #333;
+      }
+
+      /* Input and Textarea Styles */
+      input,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 6px;
+        border: 1px solid #ddd;
+        font-size: 14px;
+        color: #333;
+      }
+
+      textarea {
+        height: 150px;
+        resize: none;
+      }
+
+      /* Button Styles */
+      button {
+        width: 100%;
+        background-color: #e24452; /* Updated color */
+        color: white;
+        padding: 12px;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #c23c4b;
+      }
+
+      /* Thank You Message Styles */
+      .thank-you-message {
+        display: none;
+        text-align: center;
+        font-size: 18px;
+        color: #333;
+        margin-top: 20px;
+      }
+
+      /* Support Email Styles */
+      .support-email {
+        text-align: center;
+        font-size: 14px;
+        color: #333;
+        margin-top: 10px;
+      }
+
+      .support-email a {
+        color: #e24452; /* Updated color */
+        text-decoration: none;
+      }
+
+      .support-email a:hover {
+        text-decoration: underline;
+      }
+
+      /* Animation */
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      /* Apply fadeIn animation to the container */
+      .container {
+        animation: fadeIn 1.5s ease-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- App Icon -->
+      <div class="app-icon"></div>
+
+      <h1>Contact Support - Lovo</h1>
+
+      <form id="supportForm">
+        <label for="email">Your Email Address</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email address"
+          required
+        />
+
+        <label for="query">Your Message / Query</label>
+        <textarea
+          id="query"
+          placeholder="Enter your query or message"
+          required
+        ></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+
+      <div class="thank-you-message" id="thankYouMessage">
+        <p>Thank you! We will contact you within 12 to 24 hours.</p>
+      </div>
+
+      <div class="support-email">
+        <p>
+          If you need immediate assistance, please email us at
+          <a href="mailto:ashu@lovoapp.in">ashu@lovoapp.in</a>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("supportForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          // Show thank you message
+          document.getElementById("thankYouMessage").style.display = "block";
+
+          // Clear form fields
+          document.getElementById("email").value = "";
+          document.getElementById("query").value = "";
+
+          // Hide the form
+          event.target.style.display = "none";
+        });
+    </script>
+  </body>
+</html>
